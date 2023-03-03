@@ -18,7 +18,7 @@ func init()->void:
 
 	var first_item: Button = null
 	for item in ItemService.items:
-		var instance: ItemToggle = item_toggle.instance()
+		var instance = item_toggle.instance()
 		instance.set_item(item)
 		instance.connect("item_toggle_focus_entered", self, "item_toggle_focus_entered")
 		item_container.add_child(instance)
