@@ -2,7 +2,7 @@
 
 # ItemExplorer for [Brotato](https://store.steampowered.com/app/1942280/Brotato/)
 
-Modifies the in game mod menu to provide more information
+Adds a menu to show and manage items
 - Built for the [GodotModLoader](https://github.com/GodotModding/godot-mod-loader)
 
 ## Showcase
