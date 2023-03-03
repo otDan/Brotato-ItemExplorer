@@ -19,8 +19,8 @@ Adds a menu to show and manage items
 - Steam Workshop: 
   - https://steamcommunity.com/sharedfiles/filedetails/?id=2937057646 
 
-<a href="https://thunderstore.io/c/brotato/p/otDan/BetterModList/">
-    <img align="right" src="https://badgen.net/https://ostaszewski29.npkn.net/brotato-thunderstore-badge-data/ItemExplorer?icon=https://gcdn.thunderstore.io/static/ts/thunderstore-logomark-white.svg" hspace="50"/>
+<a href="https://thunderstore.io/c/brotato/p/otDan/ItemExplorer/">
+    <img align="right" src="https://badgen.net/https/git-hub-badge-data.npkn.net/thunderstore-downloads-request/brotato/ItemExplorer?icon=https://gcdn.thunderstore.io/static/ts/thunderstore-logomark-white.svg" hspace="50"/>
 </a>
 
 - Thunderstore: 
