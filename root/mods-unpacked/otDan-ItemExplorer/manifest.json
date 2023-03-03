@@ -1,0 +1,19 @@
+{
+  "name": "ItemExplorer",
+  "namespace": "otDan",
+  "version_number": "1.0.0",
+  "description": "Adds a menu to show and manage items",
+  "website_url": "https://github.com/otDan/Brotato-ItemExplorer",
+  "dependencies": [
+    "Darkly77-ContentLoader"
+  ],
+  "extra": {
+    "godot": {
+      "incompatibilities": [],
+      "authors": ["otDan"],
+      "compatible_mod_loader_version": "4.0.0",
+      "compatible_game_version": ["0.6.1.6"],
+      "config_defaults": {}
+    }
+  }
+}
