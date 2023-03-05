@@ -12,15 +12,15 @@ Adds a menu to show and manage items
 
 ## Installation
 
-<!-- <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2937057646">
-    <img align="right" src="https://badgen.net/https/git-hub-badge-data.npkn.net/thunderstore-downloads-request/GameSaver?icon=https://gcdn.thunderstore.io/static/ts/thunderstore-logomark-white.svg" hspace="50"/>
-</a> -->
+<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2941387735">
+    <img align="right" src="https://badgen.net/https/ostaszewski29.npkn.net/py-steam-subscribers-request/2941387735?icon=https://upload.wikimedia.org/wikipedia/commons/8/83/Steam_icon_logo.svg" hspace="50"/>
+</a>
 
 - Steam Workshop: 
-  - https://steamcommunity.com/sharedfiles/filedetails/?id=2937057646 
+  - https://steamcommunity.com/sharedfiles/filedetails/?id=2941387735
 
 <a href="https://thunderstore.io/c/brotato/p/otDan/ItemExplorer/">
-    <img align="right" src="https://badgen.net/https/git-hub-badge-data.npkn.net/thunderstore-downloads-request/brotato/ItemExplorer?icon=https://gcdn.thunderstore.io/static/ts/thunderstore-logomark-white.svg" hspace="50"/>
+    <img align="right" src="https://badgen.net/https/git-hub-badge-data.npkn.net/thunderstore-downloads-request/brotato/ItemExplorer?icon=https://gcdn.thunderstore.io/static/ts/thunderstore-logomark-black.svg" hspace="50"/>
 </a>
 
 - Thunderstore: 
@@ -38,6 +38,8 @@ Adds a menu to show and manage items
         <img align="right" src="https://raw.githubusercontent.com/aha999/DonateButtons/master/Paypal.png" height="65"/>
     </a>
 </p>
+
+
 
 ## Author
 - [@otDan](https://www.github.com/otdan)
