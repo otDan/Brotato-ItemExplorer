@@ -11,7 +11,6 @@ onready var item_container = $"%ItemContainer"
 onready var not_unlocked = $"%NotUnlocked"
 onready var item_panel_ui = $"%ItemPanelUI"
 onready var item_tags = $"%ItemTags"
-onready var item_tags_label = $"%ItemTagsLabel"
 
 onready var character_container = $"%CharacterContainer"
 
@@ -23,6 +22,10 @@ var character_toggle_dictionary: Dictionary
 func init()->void:
 	for child in item_container.get_children():
 		item_container.remove_child(child)
+
+	character_toggle_dictionary.clear()
+	for child in character_container.get_children():
+		character_container.remove_child(child)
 
 	var first_item: Button = null
 	for item in ItemService.items:
@@ -56,7 +59,6 @@ func item_toggle_focus_entered(item_data: ItemData)->void:
 	else:
 		not_unlocked.visible = false
 		item_tags.visible = true
-		item_tags_label.text = str(item_data.tags)
 
 		var has_character = false
 		for character in character_toggle_dictionary:
