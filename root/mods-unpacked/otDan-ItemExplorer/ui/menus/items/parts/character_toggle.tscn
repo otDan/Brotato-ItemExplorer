@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://mods-unpacked/otDan-ItemExplorer/ui/menus/items/parts/item_toggle.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/otDan-ItemExplorer/ui/menus/items/parts/character_toggle.gd" type="Script" id=1]
 [ext_resource path="res://items/all/acid/acid_icon.png" type="Texture" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -10,7 +10,7 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[node name="ItemToggle" type="PanelContainer"]
+[node name="CharacterToggle" type="PanelContainer"]
 margin_right = 14.0
 margin_bottom = 14.0
 script = ExtResource( 1 )
@@ -42,7 +42,7 @@ rect_min_size = Vector2( 64, 64 )
 mouse_filter = 2
 custom_styles/panel = SubResource( 1 )
 
-[node name="ItemIcon" type="TextureRect" parent="MarginContainer/Panel"]
+[node name="Icon" type="TextureRect" parent="MarginContainer/Panel"]
 unique_name_in_owner = true
 margin_right = 64.0
 margin_bottom = 64.0
@@ -53,4 +53,3 @@ expand = true
 
 [connection signal="focus_entered" from="ToggleButton" to="." method="_on_Button_focus_entered"]
 [connection signal="mouse_entered" from="ToggleButton" to="." method="_on_Button_mouse_entered"]
-[connection signal="pressed" from="ToggleButton" to="." method="_on_ToggleButton_pressed"]
