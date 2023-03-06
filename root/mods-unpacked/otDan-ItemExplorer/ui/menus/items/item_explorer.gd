@@ -86,8 +86,10 @@ func item_toggle_focus_entered(item_data: ItemData)->void:
 func item_button_pressed()->void:
 	for character_node in character_container.get_children():
 		if character_node.visible:
-			var center = character_node.rect_global_position + (character_node.rect_size / 2)
-			get_viewport().warp_mouse(center)
+			if not InputService.using_gamepad:
+				var center = character_node.rect_global_position + (character_node.rect_size / 2)
+				get_viewport().warp_mouse(center)
+
 			character_node.get_node("%ToggleButton").grab_focus()
 			return
 
@@ -98,8 +100,10 @@ func character_button_pressed(character: CharacterData)->void:
 
 	ItemExplorer.selected_character = character
 
-	var center = start_run_button.rect_global_position + (start_run_button.rect_size / 2)
-	get_viewport().warp_mouse(center)
+	if not InputService.using_gamepad:
+		var center = start_run_button.rect_global_position + (start_run_button.rect_size / 2)
+		get_viewport().warp_mouse(center)
+
 	start_run_button.grab_focus()
 	start_run_button.disabled = false
 
