@@ -50,3 +50,5 @@ rect_min_size = Vector2( 64, 64 )
 mouse_filter = 2
 texture = ExtResource( 2 )
 expand = true
+
+[connection signal="pressed" from="ToggleButton" to="." method="_on_ToggleButton_pressed"]

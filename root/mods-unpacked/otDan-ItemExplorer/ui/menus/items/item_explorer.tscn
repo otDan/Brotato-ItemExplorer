@@ -52,14 +52,16 @@ text = "MENU_MODS"
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer"]
 self_modulate = Color( 1, 1, 1, 0.313726 )
-margin_right = 1431.0
+margin_right = 1421.0
 margin_bottom = 893.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/PanelContainer"]
-margin_right = 1431.0
-margin_bottom = 893.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 1416.0
+margin_bottom = 888.0
 custom_constants/margin_right = 8
 custom_constants/margin_top = 8
 custom_constants/margin_left = 8
@@ -68,31 +70,31 @@ custom_constants/margin_bottom = 8
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/HBoxContainer/PanelContainer/MarginContainer"]
 margin_left = 8.0
 margin_top = 8.0
-margin_right = 1423.0
-margin_bottom = 885.0
+margin_right = 1403.0
+margin_bottom = 875.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 follow_focus = true
 scroll_horizontal_enabled = false
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/ScrollContainer"]
-margin_right = 1415.0
-margin_bottom = 877.0
+margin_right = 1395.0
+margin_bottom = 867.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="ItemContainer" type="GridContainer" parent="VBoxContainer/HBoxContainer/PanelContainer/MarginContainer/ScrollContainer/CenterContainer"]
 unique_name_in_owner = true
-margin_left = 707.0
-margin_top = 438.0
-margin_right = 707.0
-margin_bottom = 438.0
+margin_left = 697.0
+margin_top = 433.0
+margin_right = 697.0
+margin_bottom = 433.0
 custom_constants/vseparation = 8
 custom_constants/hseparation = 8
 columns = 13
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
-margin_left = 1447.0
+margin_left = 1437.0
 margin_right = 1830.0
 margin_bottom = 893.0
 custom_constants/separation = 16
@@ -100,13 +102,15 @@ alignment = 1
 
 [node name="NotUnlocked" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
-margin_top = 257.0
-margin_right = 383.0
-margin_bottom = 282.0
+margin_top = 222.0
+margin_right = 393.0
+margin_bottom = 257.0
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/NotUnlocked"]
-margin_right = 383.0
-margin_bottom = 25.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 388.0
+margin_bottom = 30.0
 custom_colors/font_color = Color( 0.870588, 0.243137, 0.243137, 1 )
 custom_fonts/font = ExtResource( 5 )
 text = "MENU_ITEM_NOT_UNLOCKED"
@@ -116,23 +120,25 @@ valign = 1
 [node name="ItemPanelUI" parent="VBoxContainer/HBoxContainer/VBoxContainer" instance=ExtResource( 4 )]
 unique_name_in_owner = true
 margin_left = 17.0
-margin_top = 298.0
-margin_right = 366.0
-margin_bottom = 548.0
+margin_top = 273.0
+margin_right = 376.0
+margin_bottom = 523.0
 
 [node name="ItemTags" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 self_modulate = Color( 1, 1, 1, 0.313726 )
-margin_top = 564.0
-margin_right = 383.0
+margin_top = 539.0
+margin_right = 393.0
 margin_bottom = 893.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/ItemTags"]
-margin_right = 383.0
-margin_bottom = 329.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 388.0
+margin_bottom = 349.0
 custom_constants/margin_right = 8
 custom_constants/margin_top = 8
 custom_constants/margin_left = 8
@@ -142,7 +148,7 @@ custom_constants/margin_bottom = 8
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 375.0
-margin_bottom = 321.0
+margin_bottom = 336.0
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/ItemTags/MarginContainer/VBoxContainer"]
 margin_right = 367.0
@@ -155,7 +161,7 @@ valign = 1
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/ItemTags/MarginContainer/VBoxContainer"]
 margin_top = 35.0
 margin_right = 367.0
-margin_bottom = 309.0
+margin_bottom = 273.0
 size_flags_vertical = 3
 custom_constants/margin_right = 8
 custom_constants/margin_top = 8
@@ -166,7 +172,7 @@ custom_constants/margin_bottom = 8
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 359.0
-margin_bottom = 266.0
+margin_bottom = 230.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -175,89 +181,29 @@ follow_focus = true
 scroll_horizontal_enabled = false
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/ItemTags/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer"]
-margin_right = 341.0
-margin_bottom = 344.0
+margin_right = 351.0
+margin_bottom = 222.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="CharacterContainer" type="GridContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/ItemTags/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/CenterContainer"]
 unique_name_in_owner = true
-margin_left = 42.0
-margin_right = 298.0
-margin_bottom = 344.0
+margin_left = 175.0
+margin_top = 111.0
+margin_right = 175.0
+margin_bottom = 111.0
 custom_constants/vseparation = 8
 custom_constants/hseparation = 8
 columns = 3
 
-[node name="CharacterToggle" parent="VBoxContainer/HBoxContainer/VBoxContainer/ItemTags/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/CenterContainer/CharacterContainer" instance=ExtResource( 7 )]
-margin_right = 80.0
-margin_bottom = 80.0
-
-[node name="CharacterToggle2" parent="VBoxContainer/HBoxContainer/VBoxContainer/ItemTags/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/CenterContainer/CharacterContainer" instance=ExtResource( 7 )]
-margin_left = 88.0
-margin_right = 168.0
-margin_bottom = 80.0
-
-[node name="CharacterToggle3" parent="VBoxContainer/HBoxContainer/VBoxContainer/ItemTags/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/CenterContainer/CharacterContainer" instance=ExtResource( 7 )]
-margin_left = 176.0
-margin_right = 256.0
-margin_bottom = 80.0
-
-[node name="CharacterToggle4" parent="VBoxContainer/HBoxContainer/VBoxContainer/ItemTags/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/CenterContainer/CharacterContainer" instance=ExtResource( 7 )]
-margin_top = 88.0
-margin_right = 80.0
-margin_bottom = 168.0
-
-[node name="CharacterToggle5" parent="VBoxContainer/HBoxContainer/VBoxContainer/ItemTags/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/CenterContainer/CharacterContainer" instance=ExtResource( 7 )]
-margin_left = 88.0
-margin_top = 88.0
-margin_right = 168.0
-margin_bottom = 168.0
-
-[node name="CharacterToggle6" parent="VBoxContainer/HBoxContainer/VBoxContainer/ItemTags/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/CenterContainer/CharacterContainer" instance=ExtResource( 7 )]
-margin_left = 176.0
-margin_top = 88.0
-margin_right = 256.0
-margin_bottom = 168.0
-
-[node name="CharacterToggle7" parent="VBoxContainer/HBoxContainer/VBoxContainer/ItemTags/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/CenterContainer/CharacterContainer" instance=ExtResource( 7 )]
-margin_top = 176.0
-margin_right = 80.0
-margin_bottom = 256.0
-
-[node name="CharacterToggle8" parent="VBoxContainer/HBoxContainer/VBoxContainer/ItemTags/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/CenterContainer/CharacterContainer" instance=ExtResource( 7 )]
-margin_left = 88.0
-margin_top = 176.0
-margin_right = 168.0
-margin_bottom = 256.0
-
-[node name="CharacterToggle9" parent="VBoxContainer/HBoxContainer/VBoxContainer/ItemTags/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/CenterContainer/CharacterContainer" instance=ExtResource( 7 )]
-margin_left = 176.0
-margin_top = 176.0
-margin_right = 256.0
-margin_bottom = 256.0
-
-[node name="CharacterToggle10" parent="VBoxContainer/HBoxContainer/VBoxContainer/ItemTags/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/CenterContainer/CharacterContainer" instance=ExtResource( 7 )]
-margin_top = 264.0
-margin_right = 80.0
-margin_bottom = 344.0
-
-[node name="CharacterToggle11" parent="VBoxContainer/HBoxContainer/VBoxContainer/ItemTags/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/CenterContainer/CharacterContainer" instance=ExtResource( 7 )]
-margin_left = 88.0
-margin_top = 264.0
-margin_right = 168.0
-margin_bottom = 344.0
-
-[node name="CharacterToggle12" parent="VBoxContainer/HBoxContainer/VBoxContainer/ItemTags/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/CenterContainer/CharacterContainer" instance=ExtResource( 7 )]
-margin_left = 176.0
-margin_top = 264.0
-margin_right = 256.0
-margin_bottom = 344.0
-
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/ItemTags/MarginContainer/VBoxContainer"]
-margin_top = 313.0
+[node name="StartRunButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/ItemTags/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+margin_top = 277.0
 margin_right = 367.0
-margin_bottom = 313.0
+margin_bottom = 328.0
+custom_fonts/font = ExtResource( 6 )
+disabled = true
+text = "MENU_START_RUN"
 
 [node name="Buttons" type="VBoxContainer" parent="VBoxContainer"]
 margin_left = 615.0
@@ -277,4 +223,5 @@ margin_right = 600.0
 margin_bottom = 65.0
 text = "MENU_BACK"
 
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/ItemTags/MarginContainer/VBoxContainer/StartRunButton" to="." method="_on_StartRunButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/Buttons/BackButton" to="." method="_on_BackButton_pressed"]

@@ -1,6 +1,8 @@
 class_name CharacterToggle
 extends PanelContainer
 
+signal character_button_pressed(character_data)
+
 const NOT_UNLOCKED_COLOR = Color(0, 0, 0, 0.25)
 const NOT_UNLOCKED_DARK_COLOR = Color(0, 0, 0, 0.5)
 
@@ -31,3 +33,7 @@ func _ready():
 func set_character(character_data: CharacterData):
 	self.character_data = character_data
 	pass
+
+
+func _on_ToggleButton_pressed():
+	emit_signal("character_button_pressed", character_data)
