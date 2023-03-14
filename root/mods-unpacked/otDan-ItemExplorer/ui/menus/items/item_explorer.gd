@@ -17,11 +17,12 @@ onready var start_run_button = $"%StartRunButton"
 
 onready var ContentLoader = get_node("/root/ModLoader/Darkly77-ContentLoader/ContentLoader")
 onready var ItemExplorer = get_node("/root/ModLoader/otDan-ItemExplorer/ItemExplorer")
+onready var StringComparer = get_node("/root/ModLoader/otDan-ItemExplorer/StringComparer")
 
 var character_toggle_dictionary: Dictionary
 
 
-func init()->void:
+func init() -> void:
 	ItemExplorer.selected_character = null
 	start_run_button.disabled = true
 
@@ -53,7 +54,7 @@ func init()->void:
 	first_item.grab_focus()
 
 
-func item_toggle_focus_entered(item_data: ItemData)->void:
+func item_toggle_focus_entered(item_data: ItemData) -> void:
 	ItemExplorer.selected_character = null
 	start_run_button.disabled = true
 	item_panel_ui.set_data(item_data)
@@ -83,7 +84,7 @@ func item_toggle_focus_entered(item_data: ItemData)->void:
 	item_tags.visible = false
 
 
-func item_button_pressed()->void:
+func item_button_pressed() -> void:
 	for character_node in character_container.get_children():
 		if character_node.visible:
 			if not InputService.using_gamepad:
@@ -108,7 +109,7 @@ func character_button_pressed(character: CharacterData)->void:
 	start_run_button.disabled = false
 
 
-func _on_BackButton_pressed()->void:
+func _on_BackButton_pressed() -> void:
 	emit_signal("back_button_pressed")
 
 
@@ -118,3 +119,12 @@ func _on_StartRunButton_pressed():
 
 	MusicManager.tween(-5)
 	var _error = get_tree().change_scene(MenuData.character_selection_scene)
+
+
+func _on_Search_text_changed(search: String):
+	_show_search_results(search)
+
+
+func _show_search_results(search: String):
+	for child in item_container.get_children():
+		child.visible = StringComparer._check_similarity(child.name.to_lower(), search.to_lower(), 1)

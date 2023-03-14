@@ -16,6 +16,7 @@ func _ready():
 	if item_data == null:
 		return
 
+	name = tr(item_data.name)
 	item_icon.texture = item_data.icon
 
 	var stylebox_color: StyleBoxFlat = get_stylebox("panel").duplicate()

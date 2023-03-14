@@ -1,0 +1,16 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+
+[deps]
+
+files=[ "res://mods-unpacked/otDan-ItemExplorer/translations/itemexplorer_translation.en.translation" ]
+
+source_file="res://mods-unpacked/otDan-ItemExplorer/translations/itemexplorer_translation.csv"
+dest_files=[ "res://mods-unpacked/otDan-ItemExplorer/translations/itemexplorer_translation.en.translation" ]
+
+[params]
+
+compress=true
+delimiter=0
