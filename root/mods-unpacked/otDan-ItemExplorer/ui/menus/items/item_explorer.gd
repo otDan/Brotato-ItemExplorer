@@ -22,8 +22,15 @@ onready var ContentLoader = get_node("/root/ModLoader/Darkly77-ContentLoader/Con
 onready var ItemExplorer = get_node("/root/ModLoader/otDan-ItemExplorer/ItemExplorer")
 onready var StringComparer = get_node("/root/ModLoader/otDan-ItemExplorer/StringComparer")
 
+var item_dictionary: Dictionary
 var character_toggle_dictionary: Dictionary
 var item_mod_names: PoolStringArray
+
+var visible_items: Dictionary
+enum visible_keys {
+	SEARCH,
+	MOD_TOGGLE,
+}
 
 
 func init() -> void:
@@ -33,6 +40,9 @@ func init() -> void:
 	for child in item_container.get_children():
 		item_container.remove_child(child)
 
+	for child in mod_container.get_children():
+		mod_container.remove_child(child)
+
 	character_toggle_dictionary.clear()
 	for child in character_container.get_children():
 		character_container.remove_child(child)
@@ -40,14 +50,26 @@ func init() -> void:
 	var first_item: Button = null
 	for item in ItemService.items:
 		var mod = ContentLoader.lookup_modid_by_itemdata(item)
-		if not item_mod_names.has(mod):
-			item_mod_names.append(mod)
+		if mod == "CL_Notice-NotFound":
+			mod = "Vanilla"
+		else:
+			mod = get_string_after_character(mod, "-")
+
+		for key in visible_keys:
+			if not visible_items.has(key):
+				visible_items[key] = {}
+			visible_items[key][item] = true
 
 		var instance = item_toggle.instance()
 		instance.set_item(item)
 		instance.connect("item_toggle_focus_entered", self, "item_toggle_focus_entered")
 		instance.connect("item_button_pressed", self, "item_button_pressed")
 		item_container.add_child(instance)
+
+		if not item_mod_names.has(mod):
+			item_mod_names.append(mod)
+
+		item_dictionary[item] = instance
 
 		if first_item == null:
 			first_item = instance.get_node("%ToggleButton")
@@ -60,13 +82,9 @@ func init() -> void:
 		character_toggle_dictionary[character] = instance
 
 	for mod in item_mod_names:
-		if mod == "CL_Notice-NotFound":
-			mod = "Vanilla"
-		else:
-			mod = get_string_after_character(mod, "-")
 		var instance: CheckBox = mod_toggle.instance()
 		instance.name = mod
-		instance.connect("author_toggled", self, "on_author_toggled")
+		instance.connect("mod_toggled", self, "on_mod_toggled")
 		mod_container.add_child(instance)
 
 	first_item.grab_focus()
@@ -135,6 +153,35 @@ func character_button_pressed(character: CharacterData)->void:
 	start_run_button.disabled = false
 
 
+func on_mod_toggled(mod, state):
+	for item in item_dictionary:
+		var item_mod = ContentLoader.lookup_modid_by_itemdata(item)
+		if item_mod == "CL_Notice-NotFound":
+			item_mod = "Vanilla"
+		else:
+			item_mod = get_string_after_character(item_mod, "-")
+		if not item_mod == mod:
+			continue
+		visible_items[visible_keys.keys()[visible_keys.MOD_TOGGLE]][item] = state
+	handle_item_visiblity()
+
+
+func _show_search_results(search: String):
+	for child in item_container.get_children():
+		visible_items[visible_keys.keys()[visible_keys.SEARCH]][child.item_data] = StringComparer._check_similarity(child.name.to_lower(), search.to_lower(), 1)
+	handle_item_visiblity()
+
+
+func handle_item_visiblity():
+	for item in item_dictionary:
+		var item_visible = true
+		for key in visible_keys:
+			if not visible_items[key][item]:
+				item_visible = false
+		var item_button = item_dictionary[item]
+		item_button.visible = item_visible
+
+
 func _on_BackButton_pressed() -> void:
 	emit_signal("back_button_pressed")
 
@@ -153,8 +200,3 @@ func _on_Search_text_changed(search: String):
 			child.visible = true
 		return
 	_show_search_results(search)
-
-
-func _show_search_results(search: String):
-	for child in item_container.get_children():
-		child.visible = StringComparer._check_similarity(child.name.to_lower(), search.to_lower(), 1)

@@ -1,6 +1,6 @@
 extends CheckBox
 
-signal mod_toggled(author, state)
+signal mod_toggled(mod, state)
 
 
 func _ready():
