@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://resources/fonts/actual/base/font_small_button.tres" type="DynamicFont" id=1]
+[ext_resource path="res://mods-unpacked/otDan-ItemExplorer/ui/menus/items/parts/mod_toggle.gd" type="Script" id=2]
+[ext_resource path="res://mods-unpacked/otDan-BetterModList/resources/themes/bettermodlist-mod_menu_theme.theme" type="Theme" id=3]
+[ext_resource path="res://mods-unpacked/otDan-BetterModList/resources/themes/parts/bettermodlist-checkbox_hover_pressed_styleboxflat.tres" type="StyleBox" id=4]
+
+[node name="ModToggle" type="CheckBox"]
+unique_name_in_owner = true
+theme = ExtResource( 3 )
+custom_constants/hseparation = 28
+custom_fonts/font = ExtResource( 1 )
+custom_styles/hover_pressed = ExtResource( 4 )
+pressed = true
+text = "MOD_NAME"
+clip_text = true
+script = ExtResource( 2 )
+
+[connection signal="toggled" from="." to="." method="_on_ModToggle_toggled"]

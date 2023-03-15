@@ -3,8 +3,11 @@ extends MarginContainer
 
 signal back_button_pressed
 
+export (PackedScene) var mod_toggle
 export (PackedScene) var item_toggle
 export (PackedScene) var character_toggle
+
+onready var mod_container = $"%ModContainer"
 
 onready var item_container = $"%ItemContainer"
 
@@ -20,6 +23,7 @@ onready var ItemExplorer = get_node("/root/ModLoader/otDan-ItemExplorer/ItemExpl
 onready var StringComparer = get_node("/root/ModLoader/otDan-ItemExplorer/StringComparer")
 
 var character_toggle_dictionary: Dictionary
+var item_mod_names: PoolStringArray
 
 
 func init() -> void:
@@ -35,6 +39,10 @@ func init() -> void:
 
 	var first_item: Button = null
 	for item in ItemService.items:
+		var mod = ContentLoader.lookup_modid_by_itemdata(item)
+		if not item_mod_names.has(mod):
+			item_mod_names.append(mod)
+
 		var instance = item_toggle.instance()
 		instance.set_item(item)
 		instance.connect("item_toggle_focus_entered", self, "item_toggle_focus_entered")
@@ -51,7 +59,25 @@ func init() -> void:
 		character_container.add_child(instance)
 		character_toggle_dictionary[character] = instance
 
+	for mod in item_mod_names:
+		if mod == "CL_Notice-NotFound":
+			mod = "Vanilla"
+		else:
+			mod = get_string_after_character(mod, "-")
+		var instance: CheckBox = mod_toggle.instance()
+		instance.name = mod
+		instance.connect("author_toggled", self, "on_author_toggled")
+		mod_container.add_child(instance)
+
 	first_item.grab_focus()
+
+
+func get_string_after_character(a: String, character: String) -> String:
+	var parts = a.split(character)
+	if parts.size() > 1:
+		return parts[1]
+	else:
+		return a
 
 
 func item_toggle_focus_entered(item_data: ItemData) -> void:
@@ -122,6 +148,10 @@ func _on_StartRunButton_pressed():
 
 
 func _on_Search_text_changed(search: String):
+	if search == "":
+		for child in item_container.get_children():
+			child.visible = true
+		return
 	_show_search_results(search)
 
 
