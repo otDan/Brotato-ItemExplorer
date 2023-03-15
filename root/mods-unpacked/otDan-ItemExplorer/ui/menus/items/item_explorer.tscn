@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://mods-unpacked/otDan-ItemExplorer/ui/menus/items/parts/item_toggle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://resources/themes/base_theme.tres" type="Theme" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://items/global/info.png" type="Texture" id=9]
 [ext_resource path="res://mods-unpacked/otDan-BetterModList/resources/themes/bettermodlist-mod_menu_theme.theme" type="Theme" id=10]
 [ext_resource path="res://mods-unpacked/otDan-ItemExplorer/ui/menus/items/parts/mod_toggle.tscn" type="PackedScene" id=11]
+[ext_resource path="res://ui/menus/global/my_menu_button.gd" type="Script" id=12]
 
 [node name="ItemExplorer" type="MarginContainer"]
 anchor_right = 1.0
@@ -290,6 +291,7 @@ margin_bottom = 336.0
 custom_fonts/font = ExtResource( 6 )
 disabled = true
 text = "MENU_START_RUN"
+script = ExtResource( 12 )
 
 [node name="Buttons" type="VBoxContainer" parent="VBoxContainer"]
 margin_left = 615.0
@@ -308,6 +310,7 @@ __meta__ = {
 margin_right = 600.0
 margin_bottom = 65.0
 text = "MENU_BACK"
+script = ExtResource( 12 )
 
 [connection signal="text_changed" from="VBoxContainer/HBoxContainer/VBoxContainer2/SearchContainer/Search" to="." method="_on_Search_text_changed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/ItemTags/MarginContainer/VBoxContainer/StartRunButton" to="." method="_on_StartRunButton_pressed"]

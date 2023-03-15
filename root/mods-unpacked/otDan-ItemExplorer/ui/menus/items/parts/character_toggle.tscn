@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://mods-unpacked/otDan-ItemExplorer/ui/menus/items/parts/character_toggle.gd" type="Script" id=1]
 [ext_resource path="res://items/all/acid/acid_icon.png" type="Texture" id=2]
+[ext_resource path="res://ui/menus/global/my_menu_button.gd" type="Script" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.6, 0.6, 0.6, 0.266667 )
@@ -21,6 +22,7 @@ margin_left = 7.0
 margin_top = 7.0
 margin_right = 87.0
 margin_bottom = 87.0
+script = ExtResource( 3 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 margin_left = 7.0
