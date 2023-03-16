@@ -49,14 +49,14 @@ custom_constants/separation = 16
 
 [node name="SearchContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
 margin_right = 309.0
-margin_bottom = 49.0
+margin_bottom = 54.0
 rect_min_size = Vector2( 260, 0 )
 
 [node name="Search" type="LineEdit" parent="VBoxContainer/HBoxContainer/VBoxContainer2/SearchContainer"]
 margin_left = 5.0
 margin_top = 5.0
 margin_right = 304.0
-margin_bottom = 44.0
+margin_bottom = 49.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 13 )
@@ -67,7 +67,7 @@ placeholder_alpha = 0.35
 
 [node name="ModPanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2"]
 self_modulate = Color( 1, 1, 1, 0.313726 )
-margin_top = 65.0
+margin_top = 70.0
 margin_right = 309.0
 margin_bottom = 909.0
 rect_min_size = Vector2( 260, 0 )
@@ -79,7 +79,7 @@ size_flags_stretch_ratio = 0.1
 margin_left = 5.0
 margin_top = 5.0
 margin_right = 304.0
-margin_bottom = 839.0
+margin_bottom = 834.0
 custom_constants/margin_right = 8
 custom_constants/margin_top = 8
 custom_constants/margin_left = 8
@@ -89,7 +89,7 @@ custom_constants/margin_bottom = 8
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 291.0
-margin_bottom = 826.0
+margin_bottom = 821.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ModPanelContainer/MarginContainer/VBoxContainer"]
 margin_right = 283.0
@@ -118,7 +118,7 @@ stretch_mode = 6
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ModPanelContainer/MarginContainer/VBoxContainer"]
 margin_top = 49.0
 margin_right = 283.0
-margin_bottom = 818.0
+margin_bottom = 813.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 follow_focus = true
@@ -127,7 +127,7 @@ scroll_horizontal_enabled = false
 [node name="ModContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ModPanelContainer/MarginContainer/VBoxContainer/ScrollContainer"]
 unique_name_in_owner = true
 margin_right = 283.0
-margin_bottom = 769.0
+margin_bottom = 764.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
