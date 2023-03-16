@@ -1,7 +1,7 @@
 {
   "name": "ItemExplorer",
   "namespace": "otDan",
-  "version_number": "1.1.1",
+  "version_number": "1.2.0",
   "description": "Adds a menu to show and manage items",
   "website_url": "https://github.com/otDan/Brotato-ItemExplorer",
   "dependencies": [

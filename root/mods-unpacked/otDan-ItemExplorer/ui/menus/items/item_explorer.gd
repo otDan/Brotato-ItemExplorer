@@ -168,7 +168,10 @@ func on_mod_toggled(mod, state):
 
 func _show_search_results(search: String):
 	for child in item_container.get_children():
-		visible_items[visible_keys.keys()[visible_keys.SEARCH]][child.item_data] = StringComparer._check_similarity(child.name.to_lower(), search.to_lower(), 1)
+		var result = StringComparer._check_similarity(child.name.to_lower(), search.to_lower(), 1)
+		if search == "":
+			result = true
+		visible_items[visible_keys.keys()[visible_keys.SEARCH]][child.item_data] = result
 	handle_item_visiblity()
 
 
@@ -195,8 +198,4 @@ func _on_StartRunButton_pressed():
 
 
 func _on_Search_text_changed(search: String):
-	if search == "":
-		for child in item_container.get_children():
-			child.visible = true
-		return
 	_show_search_results(search)
