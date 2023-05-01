@@ -18,6 +18,12 @@ func _ready():
 	icon.texture = character_data.icon
 	toggle_button.hint_tooltip = character_data.name
 
+	var diff_info = ProgressData.get_character_difficulty_info(character_data.my_id, RunData.current_zone)
+	if diff_info.max_difficulty_beaten.difficulty_value == 0:
+		character_data.tier = Tier.DANGER_0
+	elif diff_info.max_difficulty_beaten.difficulty_value > 0:
+		character_data.tier = diff_info.max_difficulty_beaten.difficulty_value
+
 	var stylebox_color = get_stylebox("panel").duplicate()
 	ItemService.change_panel_stylebox_from_tier(stylebox_color, character_data.tier)
 	add_stylebox_override("panel", stylebox_color)
