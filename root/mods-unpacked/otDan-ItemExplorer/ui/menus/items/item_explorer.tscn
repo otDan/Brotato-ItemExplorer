@@ -136,10 +136,11 @@ self_modulate = Color( 1, 1, 1, 0.313726 )
 margin_left = 325.0
 margin_right = 1421.0
 margin_bottom = 909.0
+rect_clip_content = true
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/PanelContainer"]
+[node name="ItemMarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/PanelContainer"]
 margin_left = 5.0
 margin_top = 5.0
 margin_right = 1091.0
@@ -149,7 +150,8 @@ custom_constants/margin_top = 8
 custom_constants/margin_left = 8
 custom_constants/margin_bottom = 8
 
-[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/HBoxContainer/PanelContainer"]
+[node name="ItemScrollContainer" type="ScrollContainer" parent="VBoxContainer/HBoxContainer/PanelContainer"]
+unique_name_in_owner = true
 margin_left = 5.0
 margin_top = 5.0
 margin_right = 1091.0
@@ -159,24 +161,30 @@ size_flags_vertical = 3
 follow_focus = true
 scroll_horizontal_enabled = false
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer"]
-margin_right = 32.0
-margin_bottom = 32.0
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/PanelContainer/ItemScrollContainer"]
+margin_right = 1086.0
+margin_bottom = 899.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_constants/margin_right = 16
 custom_constants/margin_top = 16
 custom_constants/margin_left = 16
 custom_constants/margin_bottom = 16
 
-[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/MarginContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/HBoxContainer/PanelContainer/ItemScrollContainer/MarginContainer"]
 margin_left = 16.0
 margin_top = 16.0
-margin_right = 16.0
-margin_bottom = 16.0
+margin_right = 1070.0
+margin_bottom = 883.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ItemContainer" type="GridContainer" parent="VBoxContainer/HBoxContainer/PanelContainer/ScrollContainer/MarginContainer/CenterContainer"]
+[node name="ItemContainer" type="GridContainer" parent="VBoxContainer/HBoxContainer/PanelContainer/ItemScrollContainer/MarginContainer/CenterContainer"]
 unique_name_in_owner = true
+margin_left = 527.0
+margin_top = 433.0
+margin_right = 527.0
+margin_bottom = 433.0
 custom_constants/vseparation = 8
 custom_constants/hseparation = 8
 columns = 11

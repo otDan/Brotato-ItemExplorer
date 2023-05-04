@@ -10,6 +10,7 @@ export (PackedScene) var character_toggle
 onready var mod_container = $"%ModContainer"
 
 onready var item_container = $"%ItemContainer"
+onready var item_scroll_container = $"%ItemScrollContainer"
 
 onready var not_unlocked = $"%NotUnlocked"
 onready var item_panel_ui = $"%ItemPanelUI"
@@ -26,6 +27,8 @@ var item_dictionary: Dictionary
 var character_toggle_dictionary: Dictionary
 var item_mod_names: PoolStringArray
 
+onready var item_toggle_base = item_toggle.instance()
+
 var visible_items: Dictionary
 enum visible_keys {
 	SEARCH,
@@ -33,7 +36,12 @@ enum visible_keys {
 }
 
 
+func _ready():
+	get_tree().root.connect("size_changed", self, "_on_viewport_size_changed")
+
+
 func init() -> void:
+	_on_viewport_size_changed()
 	ItemExplorer.selected_character = null
 	start_run_button.disabled = true
 
@@ -199,3 +207,8 @@ func _on_StartRunButton_pressed():
 
 func _on_Search_text_changed(search: String):
 	_show_search_results(search)
+
+
+func _on_viewport_size_changed():
+	var items: int = round(OS.get_real_window_size().x / 88)
+	item_container.columns = items
