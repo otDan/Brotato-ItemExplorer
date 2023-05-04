@@ -10,7 +10,6 @@ export (PackedScene) var character_toggle
 onready var mod_container = $"%ModContainer"
 
 onready var item_container = $"%ItemContainer"
-onready var item_scroll_container = $"%ItemScrollContainer"
 
 onready var not_unlocked = $"%NotUnlocked"
 onready var item_panel_ui = $"%ItemPanelUI"
@@ -26,8 +25,6 @@ onready var StringComparer = get_node("/root/ModLoader/otDan-ItemExplorer/String
 var item_dictionary: Dictionary
 var character_toggle_dictionary: Dictionary
 var item_mod_names: PoolStringArray
-
-onready var item_toggle_base = item_toggle.instance()
 
 var visible_items: Dictionary
 enum visible_keys {
