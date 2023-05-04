@@ -193,6 +193,11 @@ func handle_item_visiblity():
 		item_button.visible = item_visible
 
 
+func _on_viewport_size_changed():
+	var items: int = round(OS.get_real_window_size().x / 88)
+	item_container.columns = items
+
+
 func _on_BackButton_pressed() -> void:
 	emit_signal("back_button_pressed")
 
@@ -207,8 +212,3 @@ func _on_StartRunButton_pressed():
 
 func _on_Search_text_changed(search: String):
 	_show_search_results(search)
-
-
-func _on_viewport_size_changed():
-	var items: int = round(OS.get_real_window_size().x / 88)
-	item_container.columns = items
