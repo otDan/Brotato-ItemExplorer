@@ -191,7 +191,7 @@ func handle_item_visiblity():
 
 
 func _on_viewport_size_changed():
-	var items: int = round(OS.get_real_window_size().x / 88)
+	var items: int = round(get_viewport().get_visible_rect().size.x * 0.5 / 90)
 	item_container.columns = items
 
 
