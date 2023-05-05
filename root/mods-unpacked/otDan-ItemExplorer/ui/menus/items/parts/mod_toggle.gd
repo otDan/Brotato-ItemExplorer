@@ -1,12 +1,23 @@
 extends CheckBox
 
+
 signal mod_toggled(mod, state)
 
 
+onready var label = $MarginContainer/Label
+
+
 func _ready():
-	text = name
+	label.text = name
 
 
 func _on_ModToggle_toggled(button_pressed):
 	emit_signal("mod_toggled", name, button_pressed)
-	pass # Replace with function body.
+
+
+func _on_ModToggle_mouse_entered():
+	label.scrolling = true
+
+
+func _on_ModToggle_mouse_exited():
+	label.scrolling = false
