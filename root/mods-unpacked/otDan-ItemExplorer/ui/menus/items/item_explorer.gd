@@ -34,7 +34,7 @@ enum visible_keys {
 
 
 func _ready():
-	get_tree().root.connect("size_changed", self, "_on_viewport_size_changed")
+	var _size_changed = get_tree().root.connect("size_changed", self, "_on_viewport_size_changed")
 
 
 func init() -> void:
@@ -89,7 +89,7 @@ func init() -> void:
 	for mod in item_mod_names:
 		var instance: CheckBox = mod_toggle.instance()
 		instance.name = mod
-		instance.connect("mod_toggled", self, "on_mod_toggled")
+		var _mod_toggled = instance.connect("mod_toggled", self, "on_mod_toggled")
 		mod_container.add_child(instance)
 
 	first_item.grab_focus()
@@ -191,7 +191,7 @@ func handle_item_visiblity():
 
 
 func _on_viewport_size_changed():
-	var items: int = round(get_viewport().get_visible_rect().size.x * 0.5 / 90)
+	var items = int(round(get_viewport().get_visible_rect().size.x * 0.5 / 90))
 	item_container.columns = items
 
 

@@ -1,7 +1,7 @@
 extends Label
 
 
-export (float) var scroll_speed = 40
+export (float) var scroll_speed = 40.0
 var scrolling = false
 var initial_position
 
