@@ -4,7 +4,7 @@ extends MyMenuButtonParent
 signal mod_toggled(mod, state)
 
 
-onready var label = $MarginContainer/Label
+onready var label = $MarginContainer/ScrollContainer/Label
 
 
 func _ready()->void :

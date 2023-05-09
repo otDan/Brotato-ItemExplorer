@@ -934,22 +934,17 @@ custom_constants/hseparation = 8
 columns = 3
 
 [node name="CharacterToggle" parent="VBoxContainer/HBoxContainer/VBoxContainer/ItemTags/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/CharacterContainer" instance=ExtResource( 7 )]
-margin_right = 90.0
-margin_bottom = 90.0
 
 [node name="CharacterToggle2" parent="VBoxContainer/HBoxContainer/VBoxContainer/ItemTags/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/CharacterContainer" instance=ExtResource( 7 )]
 margin_left = 98.0
 margin_right = 188.0
-margin_bottom = 90.0
 
 [node name="CharacterToggle3" parent="VBoxContainer/HBoxContainer/VBoxContainer/ItemTags/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/CharacterContainer" instance=ExtResource( 7 )]
 margin_left = 196.0
 margin_right = 286.0
-margin_bottom = 90.0
 
 [node name="CharacterToggle4" parent="VBoxContainer/HBoxContainer/VBoxContainer/ItemTags/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/CharacterContainer" instance=ExtResource( 7 )]
 margin_top = 98.0
-margin_right = 90.0
 margin_bottom = 188.0
 
 [node name="CharacterToggle5" parent="VBoxContainer/HBoxContainer/VBoxContainer/ItemTags/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/CharacterContainer" instance=ExtResource( 7 )]
@@ -966,7 +961,6 @@ margin_bottom = 188.0
 
 [node name="CharacterToggle7" parent="VBoxContainer/HBoxContainer/VBoxContainer/ItemTags/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/CharacterContainer" instance=ExtResource( 7 )]
 margin_top = 196.0
-margin_right = 90.0
 margin_bottom = 286.0
 
 [node name="StartRunButton" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/ItemTags/MarginContainer/VBoxContainer"]
