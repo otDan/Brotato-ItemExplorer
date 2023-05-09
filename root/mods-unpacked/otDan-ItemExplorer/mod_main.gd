@@ -8,9 +8,9 @@ var translations_dir = ""
 var extensions_dir = ""
 
 
-func _init(mod_loader = ModLoader):
+func _init(_mod_loader = ModLoader):
 	ModLoaderUtils.log_info("Init", MOD_NAME)
-	self.mod_loader = mod_loader
+	mod_loader = _mod_loader
 
 	dir = mod_loader.UNPACKED_DIR + MOD_NAME + "/"
 	translations_dir = dir + "translations/"
