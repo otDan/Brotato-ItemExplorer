@@ -146,16 +146,16 @@ script = ExtResource( 15 )
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ModPanelContainer/MarginContainer/VBoxContainer/ScrollContainer"]
 margin_left = 8.0
 margin_top = 8.0
-margin_right = 255.0
-margin_bottom = 830.0
+margin_right = 275.0
+margin_bottom = 798.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_right = 0
+custom_constants/margin_right = 20
 
 [node name="ModContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ModPanelContainer/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer"]
 unique_name_in_owner = true
 margin_right = 247.0
-margin_bottom = 822.0
+margin_bottom = 790.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -223,6 +223,7 @@ margin_right = 247.0
 margin_bottom = 763.0
 
 [node name="ModToggle14" parent="VBoxContainer/HBoxContainer/VBoxContainer2/ModPanelContainer/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer/ModContainer" instance=ExtResource( 11 )]
+visible = false
 margin_top = 767.0
 margin_right = 247.0
 margin_bottom = 822.0
