@@ -25,9 +25,12 @@ func _ready():
 	elif diff_info.max_difficulty_beaten.difficulty_value > 0:
 		character_data.tier = diff_info.max_difficulty_beaten.difficulty_value
 
-	var stylebox_color = get_stylebox("panel").duplicate()
+	character_data.tier = Tier.RARE
+
+	var stylebox_color: StyleBoxFlat = get_stylebox("panel").duplicate()
 	ItemService.change_panel_stylebox_from_tier(stylebox_color, character_data.tier)
 	add_stylebox_override("panel", stylebox_color)
+	update_background_color()
 
 	if ProgressData.characters_unlocked.has(character_data.my_id):
 		return
@@ -39,6 +42,24 @@ func _ready():
 
 func set_character(_character_data: CharacterData):
 	character_data = _character_data
+
+
+func update_background_color(p_color:int = - 1) -> void:
+	var stylebox_color: StyleBoxFlat = toggle_button.get_stylebox("normal").duplicate()
+	change_inventory_element_stylebox_from_tier(stylebox_color, p_color if p_color != - 1 else character_data.tier, 0.35)
+	toggle_button.add_stylebox_override("normal", stylebox_color)
+
+
+func change_inventory_element_stylebox_from_tier(stylebox: StyleBoxFlat, tier: int, alpha: float = 1) -> void:
+	var tier_color = ItemService.get_color_from_tier(tier)
+
+	if tier_color == Color.white:
+		tier_color = Color.black
+		tier_color.a = 0.39
+	else :
+		tier_color.a = alpha
+
+	stylebox.bg_color = tier_color
 
 
 func _on_ToggleButton_pressed():

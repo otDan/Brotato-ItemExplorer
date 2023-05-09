@@ -1,8 +1,213 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://mods-unpacked/otDan-ItemExplorer/ui/menus/items/parts/character_toggle.gd" type="Script" id=1]
 [ext_resource path="res://items/all/acid/acid_icon.png" type="Texture" id=2]
 [ext_resource path="res://ui/menus/global/my_menu_button.gd" type="Script" id=3]
+[ext_resource path="res://resources/fonts/actual/base/font_subtitle.tres" type="DynamicFont" id=4]
+[ext_resource path="res://resources/fonts/actual/base/font_menus.tres" type="DynamicFont" id=5]
+[ext_resource path="res://resources/themes/scroll_bar_styles/scroll.tres" type="StyleBox" id=6]
+[ext_resource path="res://resources/themes/scroll_bar_styles/grabber_pressed.tres" type="StyleBox" id=7]
+[ext_resource path="res://resources/themes/button_styles/button_normal.tres" type="StyleBox" id=8]
+[ext_resource path="res://resources/fonts/actual/base/font_small_title.tres" type="DynamicFont" id=9]
+[ext_resource path="res://resources/fonts/actual/base/font_small_text.tres" type="DynamicFont" id=10]
+[ext_resource path="res://resources/themes/scroll_bar_styles/grabber_highlight.tres" type="StyleBox" id=11]
+[ext_resource path="res://resources/themes/scroll_bar_styles/grabber.tres" type="StyleBox" id=12]
+[ext_resource path="res://ui/menus/global/check_button_off.png" type="Texture" id=13]
+[ext_resource path="res://ui/menus/global/option_button_arrow.png" type="Texture" id=14]
+[ext_resource path="res://ui/menus/global/check_button_on.png" type="Texture" id=15]
+
+[sub_resource type="StyleBoxFlat" id=26]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+bg_color = Color( 0.352941, 0.352941, 0.352941, 0.784314 )
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id=27]
+content_margin_left = 15.0
+content_margin_right = 15.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color( 1, 1, 1, 0.784314 )
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id=28]
+content_margin_left = 15.0
+content_margin_right = 15.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color( 1, 1, 1, 0.784314 )
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id=29]
+content_margin_left = 15.0
+content_margin_right = 15.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color( 0, 0, 0, 0.784314 )
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id=30]
+content_margin_left = 15.0
+content_margin_right = 15.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color( 1, 1, 1, 0.784314 )
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="ImageTexture" id=9]
+
+[sub_resource type="ImageTexture" id=10]
+
+[sub_resource type="ImageTexture" id=11]
+
+[sub_resource type="ImageTexture" id=12]
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.588235, 0.588235, 0.588235, 1 )
+expand_margin_top = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.929412, 0.929412, 0.929412, 1 )
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+expand_margin_top = 15.0
+expand_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.101961, 0.101961, 0.101961, 1 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0, 0, 0, 1 )
+expand_margin_left = 5.0
+expand_margin_right = 5.0
+expand_margin_top = 15.0
+expand_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxFlat" id=23]
+bg_color = Color( 0.247059, 0.286275, 0.360784, 0.784314 )
+
+[sub_resource type="StyleBoxFlat" id=22]
+content_margin_left = 15.0
+content_margin_right = 15.0
+content_margin_top = 15.0
+content_margin_bottom = 15.0
+bg_color = Color( 0.137255, 0.160784, 0.207843, 0.784314 )
+
+[sub_resource type="StyleBoxFlat" id=32]
+content_margin_left = 0.0
+content_margin_right = 0.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+bg_color = Color( 0, 0, 0, 0.901961 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0, 0, 0, 0.886275 )
+
+[sub_resource type="StyleBoxFlat" id=21]
+draw_center = false
+border_width_top = 20
+border_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="StyleBoxFlat" id=18]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color( 1, 1, 1, 0 )
+draw_center = false
+border_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="StyleBoxEmpty" id=19]
+
+[sub_resource type="StyleBoxFlat" id=20]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color( 0, 0, 0, 0.588235 )
+draw_center = false
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id=31]
+default_font = ExtResource( 5 )
+Button/colors/font_color = Color( 1, 1, 1, 1 )
+Button/colors/font_color_disabled = Color( 0.901961, 0.901961, 0.901961, 0.2 )
+Button/colors/font_color_focus = Color( 0, 0, 0, 1 )
+Button/colors/font_color_hover = Color( 0, 0, 0, 1 )
+Button/colors/font_color_pressed = Color( 0, 0, 0, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = ExtResource( 5 )
+Button/styles/disabled = SubResource( 26 )
+Button/styles/focus = SubResource( 27 )
+Button/styles/hover = SubResource( 28 )
+Button/styles/normal = SubResource( 29 )
+Button/styles/pressed = SubResource( 30 )
+CheckButton/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+CheckButton/icons/off = ExtResource( 13 )
+CheckButton/icons/on = ExtResource( 15 )
+CheckButton/styles/pressed = ExtResource( 8 )
+HScrollBar/styles/grabber = ExtResource( 12 )
+HScrollBar/styles/grabber_highlight = ExtResource( 11 )
+HScrollBar/styles/grabber_pressed = ExtResource( 7 )
+HScrollBar/styles/scroll = ExtResource( 6 )
+HSlider/icons/grabber = SubResource( 9 )
+HSlider/icons/grabber_disabled = SubResource( 10 )
+HSlider/icons/grabber_highlight = SubResource( 11 )
+HSlider/icons/tick = SubResource( 12 )
+HSlider/styles/grabber_area = SubResource( 14 )
+HSlider/styles/grabber_area_highlight = SubResource( 8 )
+HSlider/styles/slider = SubResource( 13 )
+LineEdit/fonts/font = ExtResource( 10 )
+LineEdit/styles/focus = SubResource( 23 )
+LineEdit/styles/normal = SubResource( 22 )
+OptionButton/constants/arrow_margin = 15
+OptionButton/icons/arrow = ExtResource( 14 )
+PanelContainer/styles/panel = SubResource( 32 )
+PopupMenu/styles/panel = SubResource( 15 )
+RichTextLabel/fonts/normal_font = ExtResource( 4 )
+TabContainer/fonts/font = ExtResource( 9 )
+TabContainer/styles/panel = SubResource( 21 )
+TabContainer/styles/tab_bg = SubResource( 18 )
+TabContainer/styles/tab_disabled = SubResource( 19 )
+TabContainer/styles/tab_fg = SubResource( 20 )
+TextEdit/fonts/font = ExtResource( 10 )
+TextEdit/styles/focus = SubResource( 23 )
+TextEdit/styles/normal = SubResource( 22 )
+VScrollBar/styles/grabber = ExtResource( 12 )
+VScrollBar/styles/grabber_highlight = ExtResource( 11 )
+VScrollBar/styles/grabber_pressed = ExtResource( 7 )
+VScrollBar/styles/scroll = ExtResource( 6 )
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.6, 0.6, 0.6, 0.266667 )
@@ -12,39 +217,33 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [node name="CharacterToggle" type="PanelContainer"]
-margin_right = 14.0
-margin_bottom = 14.0
+margin_right = 90.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 90, 90 )
+theme = SubResource( 31 )
 script = ExtResource( 1 )
 
 [node name="ToggleButton" type="Button" parent="."]
 unique_name_in_owner = true
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 87.0
-margin_bottom = 87.0
+margin_right = 90.0
+margin_bottom = 90.0
 script = ExtResource( 3 )
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 87.0
-margin_bottom = 87.0
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 90.0
+margin_bottom = 90.0
 mouse_filter = 2
-custom_constants/margin_right = 8
-custom_constants/margin_top = 8
-custom_constants/margin_left = 8
-custom_constants/margin_bottom = 8
 
-[node name="Panel" type="Panel" parent="MarginContainer"]
-margin_left = 8.0
-margin_top = 8.0
-margin_right = 72.0
-margin_bottom = 72.0
+[node name="Panel" type="Panel" parent="CenterContainer"]
+margin_left = 13.0
+margin_top = 13.0
+margin_right = 77.0
+margin_bottom = 77.0
 rect_min_size = Vector2( 64, 64 )
 mouse_filter = 2
 custom_styles/panel = SubResource( 1 )
 
-[node name="Icon" type="TextureRect" parent="MarginContainer/Panel"]
+[node name="Icon" type="TextureRect" parent="CenterContainer/Panel"]
 unique_name_in_owner = true
 margin_right = 64.0
 margin_bottom = 64.0
