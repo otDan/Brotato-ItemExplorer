@@ -35,9 +35,8 @@ func _ready():
 	item_icon.self_modulate.a = 0.65
 
 
-func set_item(item_data: ItemData):
-	self.item_data = item_data
-	pass
+func set_item(_item_data: ItemData):
+	item_data = _item_data
 
 
 func send_item():

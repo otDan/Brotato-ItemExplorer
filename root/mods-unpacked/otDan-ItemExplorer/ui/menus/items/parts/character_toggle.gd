@@ -11,6 +11,7 @@ onready var toggle_button = $"%ToggleButton"
 
 var character_data: CharacterData
 
+
 func _ready():
 	if character_data == null:
 		return
@@ -36,9 +37,8 @@ func _ready():
 	icon.self_modulate.a = 0.25
 
 
-func set_character(character_data: CharacterData):
-	self.character_data = character_data
-	pass
+func set_character(_character_data: CharacterData):
+	character_data = _character_data
 
 
 func _on_ToggleButton_pressed():
