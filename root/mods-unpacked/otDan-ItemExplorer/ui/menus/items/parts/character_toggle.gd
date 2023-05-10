@@ -25,8 +25,6 @@ func _ready():
 	elif diff_info.max_difficulty_beaten.difficulty_value > 0:
 		character_data.tier = diff_info.max_difficulty_beaten.difficulty_value
 
-	character_data.tier = Tier.RARE
-
 	var stylebox_color: StyleBoxFlat = get_stylebox("panel").duplicate()
 	ItemService.change_panel_stylebox_from_tier(stylebox_color, character_data.tier)
 	add_stylebox_override("panel", stylebox_color)
