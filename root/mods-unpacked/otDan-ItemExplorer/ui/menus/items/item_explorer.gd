@@ -20,7 +20,7 @@ onready var start_run_button = $"%StartRunButton"
 
 onready var ContentLoader = get_node("/root/ModLoader/Darkly77-ContentLoader/ContentLoader")
 onready var ItemExplorer = get_node("/root/ModLoader/otDan-ItemExplorer/ItemExplorer")
-onready var StringComparer = get_node("/root/ModLoader/otDan-ItemExplorer/StringComparer")
+onready var StringComparer = get_node("/root/ModLoader/otDan-ItemExplorer/ItemStringComparer")
 
 var item_dictionary: Dictionary
 var character_toggle_dictionary: Dictionary

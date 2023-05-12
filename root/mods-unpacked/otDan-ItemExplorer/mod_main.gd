@@ -40,6 +40,6 @@ func _add_child_classes():
 	ItemExplorer.name = "ItemExplorer"
 	add_child(ItemExplorer)
 
-	var StringComparer = load(dir + "global/string_comparer.gd").new()
-	StringComparer.name = "StringComparer"
-	add_child(StringComparer)
+	var ItemStringComparer = load(dir + "global/string_comparer.gd").new()
+	ItemStringComparer.name = "ItemStringComparer"
+	add_child(ItemStringComparer)

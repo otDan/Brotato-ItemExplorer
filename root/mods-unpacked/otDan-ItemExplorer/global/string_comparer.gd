@@ -1,4 +1,4 @@
-class_name StringComparer
+class_name ItemStringComparer
 extends Node
 
 

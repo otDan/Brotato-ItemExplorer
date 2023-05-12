@@ -79,7 +79,6 @@ size_flags_vertical = 6
 custom_fonts/font = ExtResource( 4 )
 text = "MOD_NAME"
 valign = 1
-percent_visible = -0.125
 script = ExtResource( 5 )
 
 [node name="Amount" type="Label" parent="MarginContainer/HBoxContainer"]
