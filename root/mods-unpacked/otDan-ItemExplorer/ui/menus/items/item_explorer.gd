@@ -40,18 +40,8 @@ func _ready():
 
 func init() -> void:
 	_on_viewport_size_changed()
-	ItemExplorer.selected_character = null
-	start_run_button.disabled = true
 
-	for child in item_container.get_children():
-		item_container.remove_child(child)
-
-	for child in mod_container.get_children():
-		mod_container.remove_child(child)
-
-	character_toggle_dictionary.clear()
-	for child in character_container.get_children():
-		character_container.remove_child(child)
+	reset()
 
 	var first_item: Button = null
 	for item in ItemService.items:
@@ -97,6 +87,29 @@ func init() -> void:
 	first_item.grab_focus()
 
 
+func reset():
+	ItemExplorer.selected_character = null
+	start_run_button.disabled = true
+
+	for child in item_container.get_children():
+		item_container.remove_child(child)
+
+	for child in mod_container.get_children():
+		mod_container.remove_child(child)
+
+	character_toggle_dictionary.clear()
+	for child in character_container.get_children():
+		character_container.remove_child(child)
+
+	reset_preview_player()
+
+
+func reset_preview_player():
+	for appearance in item_appearances:
+		appearance.queue_free()
+	item_appearances.clear()
+
+
 func get_string_after_character(a: String, character: String) -> String:
 	var parts = a.split(character)
 	if parts.size() > 1:
@@ -112,10 +125,7 @@ func item_toggle_focus_entered(item_data: ItemData) -> void:
 
 	var animation_node = preview_player.get_node("Animation")
 
-	for appearance in item_appearances:
-		appearance.queue_free()
-	item_appearances.clear()
-
+	reset_preview_player()
 	for appearance in item_data.item_appearances:
 		if appearance == null:
 			continue
