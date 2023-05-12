@@ -7,24 +7,25 @@ export (PackedScene) var mod_toggle
 export (PackedScene) var item_toggle
 export (PackedScene) var character_toggle
 
-onready var mod_container = $"%ModContainer"
-
-onready var item_container = $"%ItemContainer"
-
-onready var not_unlocked = $"%NotUnlocked"
-onready var item_panel_ui = $"%ItemPanelUI"
-onready var item_tags = $"%ItemTags"
-
-onready var character_container = $"%CharacterContainer"
-onready var start_run_button = $"%StartRunButton"
-
 onready var ContentLoader = get_node("/root/ModLoader/Darkly77-ContentLoader/ContentLoader")
 onready var ItemExplorer = get_node("/root/ModLoader/otDan-ItemExplorer/ItemExplorer")
 onready var StringComparer = get_node("/root/ModLoader/otDan-ItemExplorer/ItemStringComparer")
 
+onready var mod_container = $"%ModContainer"
+onready var item_container = $"%ItemContainer"
+onready var not_unlocked = $"%NotUnlocked"
+onready var item_panel_ui = $"%ItemPanelUI"
+onready var item_tags = $"%ItemTags"
+onready var character_container = $"%CharacterContainer"
+onready var start_run_button = $"%StartRunButton"
+
+onready var item_preview_container = $"%ItemPreviewContainer"
+onready var preview_player = item_preview_container.get_node("%PreviewPlayer")
+
 var item_dictionary: Dictionary
 var character_toggle_dictionary: Dictionary
 var mod_items: Dictionary
+var item_appearances: Array = []
 
 var visible_items: Dictionary
 enum visible_keys {
@@ -108,6 +109,18 @@ func item_toggle_focus_entered(item_data: ItemData) -> void:
 	ItemExplorer.selected_character = null
 	start_run_button.disabled = true
 	item_panel_ui.set_data(item_data)
+
+	var animation_node = preview_player.get_node("Animation")
+
+	for appearance in item_appearances:
+		appearance.queue_free()
+	item_appearances.clear()
+
+	for appearance in item_data.item_appearances:
+		var item_sprite = Sprite.new()
+		item_sprite.texture = appearance.sprite
+		animation_node.add_child(item_sprite)
+		item_appearances.append(item_sprite)
 
 	if ProgressData.items_unlocked.has(item_data.my_id):
 		not_unlocked.visible = false
