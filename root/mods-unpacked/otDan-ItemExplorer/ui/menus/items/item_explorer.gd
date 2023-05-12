@@ -101,6 +101,8 @@ func reset():
 	for child in character_container.get_children():
 		character_container.remove_child(child)
 
+	mod_items.clear()
+
 	reset_preview_player()
 
 
