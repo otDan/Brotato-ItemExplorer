@@ -117,9 +117,16 @@ func item_toggle_focus_entered(item_data: ItemData) -> void:
 	item_appearances.clear()
 
 	for appearance in item_data.item_appearances:
+		if appearance == null:
+			continue
+		if appearance.sprite == null:
+			continue
+
 		var item_sprite = Sprite.new()
 		item_sprite.texture = appearance.sprite
 		animation_node.add_child(item_sprite)
+		if appearance.depth < - 1:
+			animation_node.move_child(item_sprite, 2)
 		item_appearances.append(item_sprite)
 
 	if ProgressData.items_unlocked.has(item_data.my_id):
