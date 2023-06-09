@@ -25,7 +25,7 @@ func _ready():
 	ModLoaderUtils.log_success("Loaded", MOD_NAME)
 
 
-func _install_translations()->void:
+func _install_translations() -> void:
 	mod_loader.add_translation_from_resource(translations_dir + "itemexplorer_translation.en.translation")
 
 
@@ -43,3 +43,4 @@ func _add_child_classes():
 	var ItemStringComparer = load(dir + "global/string_comparer.gd").new()
 	ItemStringComparer.name = "ItemStringComparer"
 	add_child(ItemStringComparer)
+	
