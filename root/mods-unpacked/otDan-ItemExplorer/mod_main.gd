@@ -11,8 +11,6 @@ func _init(_mod_loader):
 	ModLoaderLog.info("Init", MOD_NAME)
 
 	dir = ModLoaderMod.get_unpacked_dir() + MOD_NAME + "/"
-	translations_dir = dir + "translations/"
-	extensions_dir = dir + "extensions/"
 
 	_install_translations()
 	_install_script_extensions()
@@ -21,13 +19,19 @@ func _init(_mod_loader):
 
 func _ready():
 	ModLoaderLog.success("Loaded", MOD_NAME)
+	
+
+func _disable():
+	pass
 
 
 func _install_translations() -> void:
+	translations_dir = dir + "translations/"
 	ModLoaderMod.add_translation(translations_dir + "itemexplorer_translation.en.translation")
 
 
 func _install_script_extensions():
+	extensions_dir = dir + "extensions/"
 	ModLoaderMod.install_script_extension(extensions_dir + "ui/menus/title_screen/title_screen_menus.gd")
 	ModLoaderMod.install_script_extension(extensions_dir + "ui/menus/pages/menu_choose_options.gd")
 	ModLoaderMod.install_script_extension(extensions_dir + "ui/menus/run/character_selection.gd")
