@@ -1,31 +1,37 @@
 class_name ItemExplorerMenu
-extends MarginContainer
+extends Control
 
 signal back_button_pressed
 
 export (PackedScene) var mod_toggle
-export (PackedScene) var item_toggle
 export (PackedScene) var character_toggle
+export (PackedScene) var fake_player_scene
+export (PackedScene) var item_toggle
 
 onready var ContentLoader = get_node("/root/ModLoader/Darkly77-ContentLoader/ContentLoader")
 onready var ItemExplorer = get_node("/root/ModLoader/otDan-ItemExplorer/ItemExplorer")
 onready var StringComparer = get_node("/root/ModLoader/otDan-ItemExplorer/ItemStringComparer")
 
-onready var mod_container = $"%ModContainer"
-onready var item_container = $"%ItemContainer"
-onready var not_unlocked = $"%NotUnlocked"
-onready var item_panel_ui = $"%ItemPanelUI"
-onready var item_tags = $"%ItemTags"
-onready var character_container = $"%CharacterContainer"
-onready var start_run_button = $"%StartRunButton"
+onready var content_explorer = $"%ContentExplorer"
+onready var item_container = content_explorer.get_node("%ContentContainer")
+onready var not_unlocked = content_explorer.get_node("%NotUnlocked")
+onready var item_panel_ui = content_explorer.get_node("%ContentPanelUI")
+onready var item_tags = content_explorer.get_node("%Tags")
+onready var character_container = content_explorer.get_node("%CharacterContainer")
+onready var start_run_button = content_explorer.get_node("%StartRunButton")
+
+onready var mod_panel_container = content_explorer.get_node("%ModPanelContainer")
+onready var mod_container = mod_panel_container.get_node("%ModContainer")
 
 onready var item_preview_container = $"%ItemPreviewContainer"
-onready var preview_player = item_preview_container.get_node("%PreviewPlayer")
+
+onready var scene_holder = item_preview_container.get_node("%SceneHolder")
 
 var item_dictionary: Dictionary
 var character_toggle_dictionary: Dictionary
 var mod_items: Dictionary
 var item_appearances: Array = []
+var fake_player: Player
 
 var visible_items: Dictionary
 enum visible_keys {
@@ -42,7 +48,7 @@ func init() -> void:
 	_on_viewport_size_changed()
 
 	reset()
-
+	
 	var first_item: Button = null
 	for item in ItemService.items:
 		var mod = ContentLoader.lookup_modid_by_itemdata(item)
@@ -102,14 +108,30 @@ func reset():
 		character_container.remove_child(child)
 
 	mod_items.clear()
+	
+	reset_fake_player()
+	
 
-	reset_preview_player()
+func full_reset() -> void:
+	reset()
+	delete_fake_player()
 
 
-func reset_preview_player():
+func reset_fake_player():
 	for appearance in item_appearances:
 		appearance.queue_free()
 	item_appearances.clear()
+	
+	delete_fake_player()
+		
+	fake_player = fake_player_scene.instance()
+	scene_holder.add_child(fake_player)
+
+
+func delete_fake_player():
+	if not fake_player == null:
+		fake_player.queue_free()
+	fake_player = null
 
 
 func get_string_after_character(a: String, character: String) -> String:
@@ -125,9 +147,8 @@ func item_toggle_focus_entered(item_data: ItemData) -> void:
 	start_run_button.disabled = true
 	item_panel_ui.set_data(item_data)
 
-	var animation_node = preview_player.get_node("Animation")
-
-	reset_preview_player()
+	reset_fake_player()
+	var animation_node = fake_player.get_node("Animation")
 	for appearance in item_data.item_appearances:
 		if appearance == null:
 			continue
@@ -229,6 +250,7 @@ func _on_viewport_size_changed():
 
 
 func _on_BackButton_pressed() -> void:
+	full_reset()
 	emit_signal("back_button_pressed")
 
 

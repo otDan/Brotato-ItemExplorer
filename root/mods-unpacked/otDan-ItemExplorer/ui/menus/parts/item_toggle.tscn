@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://mods-unpacked/otDan-ItemExplorer/ui/menus/items/parts/item_toggle.gd" type="Script" id=1]
+[ext_resource path="res://mods-unpacked/otDan-ItemExplorer/ui/menus/parts/item_toggle.gd" type="Script" id=1]
 [ext_resource path="res://items/all/acid/acid_icon.png" type="Texture" id=2]
 [ext_resource path="res://resources/fonts/actual/base/font_button.tres" type="DynamicFont" id=3]
 [ext_resource path="res://ui/menus/global/my_menu_button.gd" type="Script" id=4]

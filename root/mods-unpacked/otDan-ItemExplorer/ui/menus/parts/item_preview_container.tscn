@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://resources/fonts/actual/base/font_small_button.tres" type="DynamicFont" id=28]
 [ext_resource path="res://resources/tiles/tiles_outline.png" type="Texture" id=37]
-[ext_resource path="res://entities/units/player/player.tscn" type="PackedScene" id=53]
 
 [node name="ItemPreviewContainer" type="PanelContainer"]
 self_modulate = Color( 1, 1, 1, 0.313726 )
@@ -43,9 +42,8 @@ margin_bottom = 170.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="PreviewPlayer" parent="MarginContainer/VBoxContainer/Control" instance=ExtResource( 53 )]
+[node name="SceneHolder" type="Node2D" parent="MarginContainer/VBoxContainer/Control"]
 unique_name_in_owner = true
-position = Vector2( 175, 64 )
 
 [node name="Outline" type="NinePatchRect" parent="MarginContainer/VBoxContainer/Control"]
 modulate = Color( 0.470588, 0.403922, 0.345098, 1 )
