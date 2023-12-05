@@ -44,6 +44,7 @@ size_flags_vertical = 3
 
 [node name="SceneHolder" type="Node2D" parent="MarginContainer/VBoxContainer/Control"]
 unique_name_in_owner = true
+position = Vector2( 172.5, 64 )
 
 [node name="Outline" type="NinePatchRect" parent="MarginContainer/VBoxContainer/Control"]
 modulate = Color( 0.470588, 0.403922, 0.345098, 1 )

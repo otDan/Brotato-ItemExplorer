@@ -149,19 +149,26 @@ func item_toggle_focus_entered(item_data: ItemData) -> void:
 
 	reset_fake_player()
 	var animation_node = fake_player.get_node("Animation")
+	var has_cosmetic = false
 	for appearance in item_data.item_appearances:
-		if appearance == null:
-			continue
-		if appearance.sprite == null:
+		if appearance == null or appearance.sprite == null:
 			continue
 
+		has_cosmetic = true
+			
 		var item_sprite = Sprite.new()
 		item_sprite.texture = appearance.sprite
 		animation_node.add_child(item_sprite)
 		if appearance.depth < - 1:
 			animation_node.move_child(item_sprite, 2)
 		item_appearances.append(item_sprite)
-
+		
+	if has_cosmetic:
+		if not item_preview_container.visible:
+			item_preview_container.visible = true
+	else:
+		item_preview_container.visible = false
+		
 	if ProgressData.items_unlocked.has(item_data.my_id):
 		not_unlocked.visible = false
 		item_tags.visible = true

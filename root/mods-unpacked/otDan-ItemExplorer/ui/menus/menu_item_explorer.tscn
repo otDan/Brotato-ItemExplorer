@@ -35,6 +35,10 @@ unique_name_in_owner = true
 margin_top = 635.0
 margin_bottom = 865.0
 
+[node name="Label" parent="ContentExplorer/VBoxContainer/HBoxContainer/SideContainer/Tags/MarginContainer/VBoxContainer" index="0"]
+text = "MENU_TAGGED_CHARACTERS"
+
+[connection signal="text_changed" from="ContentExplorer/VBoxContainer/HBoxContainer/ModColumn/SearchContainer/MarginContainer/Search" to="." method="_on_Search_text_changed"]
 [connection signal="pressed" from="ContentExplorer/VBoxContainer/HBoxContainer/SideContainer/Tags/MarginContainer/VBoxContainer/StartRunButton" to="." method="_on_StartRunButton_pressed"]
 [connection signal="pressed" from="ContentExplorer/VBoxContainer/Buttons/BackButton" to="." method="_on_BackButton_pressed"]
 
