@@ -86,7 +86,7 @@ func init() -> void:
 
 	for mod in mod_items.keys():
 		var instance: CheckBox = mod_toggle.instance()
-		var _mod_toggled = instance.connect("mod_toggled", self, "on_mod_toggled")
+		var _mod_toggled = instance.connect("value_toggled", self, "on_value_toggled")
 		mod_container.add_child(instance)
 		instance.set_info(mod, mod_items[mod].size())
 

@@ -4,7 +4,7 @@
 [ext_resource path="res://mods-unpacked/otDan-ItemExplorer/ui/menus/menu_item_explorer.gd" type="Script" id=2]
 [ext_resource path="res://mods-unpacked/otDan-ItemExplorer/ui/menus/parts/item_preview_container.tscn" type="PackedScene" id=3]
 [ext_resource path="res://mods-unpacked/otDan-SharedResources/ui/menus/parts/character_toggle.tscn" type="PackedScene" id=4]
-[ext_resource path="res://mods-unpacked/otDan-SharedResources/ui/menus/parts/mod_toggle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://mods-unpacked/otDan-SharedResources/ui/menus/parts/value_toggle.tscn" type="PackedScene" id=5]
 [ext_resource path="res://mods-unpacked/otDan-ItemExplorer/ui/menus/parts/item_toggle.tscn" type="PackedScene" id=6]
 [ext_resource path="res://mods-unpacked/otDan-SharedResources/ui/menus/parts/fake_player.tscn" type="PackedScene" id=7]
 
@@ -19,6 +19,47 @@ item_toggle = ExtResource( 6 )
 
 [node name="ContentExplorer" parent="." instance=ExtResource( 1 )]
 unique_name_in_owner = true
+
+[node name="MarginContainer" parent="ContentExplorer/VBoxContainer/HBoxContainer/ModColumn/ModPanelContainer" index="0"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 304.0
+margin_bottom = 873.0
+
+[node name="VBoxContainer" parent="ContentExplorer/VBoxContainer/HBoxContainer/ModColumn/ModPanelContainer/MarginContainer" index="0"]
+margin_right = 291.0
+margin_bottom = 860.0
+
+[node name="HBoxContainer" parent="ContentExplorer/VBoxContainer/HBoxContainer/ModColumn/ModPanelContainer/MarginContainer/VBoxContainer" index="0"]
+margin_right = 283.0
+margin_bottom = 45.0
+
+[node name="Label" parent="ContentExplorer/VBoxContainer/HBoxContainer/ModColumn/ModPanelContainer/MarginContainer/VBoxContainer/HBoxContainer" index="0"]
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 245.0
+margin_bottom = 45.0
+
+[node name="TextureRect" parent="ContentExplorer/VBoxContainer/HBoxContainer/ModColumn/ModPanelContainer/MarginContainer/VBoxContainer/HBoxContainer" index="1"]
+margin_left = 253.0
+margin_right = 283.0
+margin_bottom = 45.0
+
+[node name="ScrollContainer" parent="ContentExplorer/VBoxContainer/HBoxContainer/ModColumn/ModPanelContainer/MarginContainer/VBoxContainer" index="1"]
+margin_top = 49.0
+margin_right = 283.0
+margin_bottom = 852.0
+
+[node name="MarginContainer" parent="ContentExplorer/VBoxContainer/HBoxContainer/ModColumn/ModPanelContainer/MarginContainer/VBoxContainer/ScrollContainer" index="0"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 275.0
+margin_bottom = 795.0
+custom_constants/margin_right = 20
+
+[node name="ModContainer" parent="ContentExplorer/VBoxContainer/HBoxContainer/ModColumn/ModPanelContainer/MarginContainer/VBoxContainer/ScrollContainer/MarginContainer" index="0"]
+margin_right = 247.0
+margin_bottom = 787.0
 
 [node name="NotUnlocked" parent="ContentExplorer/VBoxContainer/HBoxContainer/SideContainer" index="0"]
 margin_top = 102.0
